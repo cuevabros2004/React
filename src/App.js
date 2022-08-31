@@ -3,9 +3,6 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import './App.css';
 
-const nombre = 'Germán'
-const apellido = 'Cueva'
-const hijos = ''
 
 function App(props) {
   //Edit <code>src/App.js</code> and save to reload.
@@ -19,8 +16,8 @@ function App(props) {
       </header>
 
       <main className="App-main"> 
-      <br></br> <br></br>
-      <p> <h1><ItemListContainer greeting={mensaje}/></h1> </p>
+      <br></br>  
+          <ItemListContainer/>
      </main>
 
     </div>

@@ -2,16 +2,13 @@ import '../App.css';
 import CartWidget from "./CartWidget"
 import logo from '../logo.png';
 import logoCarrito from '../logoCarrito.png';
-//import 'bootstrap/dist/css/bootstrap.css';
-
 
 const NavBar = () => {
     
   return (
     
     <main>  
-
-
+ 
           <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
