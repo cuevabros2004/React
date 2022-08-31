@@ -1,0 +1,7 @@
+[
+{"codigo": "1", "nombreProducto": "SALÓN DE FIESTAS", "precioPorPersona": 200, "imagen":"./imagenes/Salon.jpg", "limiteCantPersonas": 100},
+{"codigo": "2", "nombreProducto": "PILETA", "precioPorPersona": 300, "imagen":"./imagenes/Pileta.jpg", "limiteCantPersonas": 20},
+{"codigo": "3", "nombreProducto": "PARRILLA", "precioPorPersona": 400, "imagen": "./imagenes/Parrilla.jpg", "limiteCantPersonas": 100},
+{"codigo": "4", "nombreProducto": "HOSPEDAJE POR DÍA", "precioPorPersona": 500, "imagen": "./imagenes/Hospedaje.jpg", "limiteCantPersonas": 8},
+{"codigo": "5", "nombreProducto": "CABALGATA", "precioPorPersona": 250, "imagen": "./imagenes/Cabalgata.jfif", "limiteCantPersonas": 3}
+]

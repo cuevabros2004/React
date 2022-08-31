@@ -17,13 +17,13 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
       }
 
     return (
-           
-        <div class="max-w-sm rounded overflow-hidden shadow-lg inline-block">
-   
-        <div class="px-6 py-1 ml-2">
+                
+        <div className="max-w-sm rounded overflow-hidden shadow-lg inline-block">
+        
+        <div className="px-6 py-1 ml-2">
             <div className="font-bold text-xl mb-2">{nombreProducto}</div>
             <img className= "" src={urlImagen}/>
-            <p class="text-gray-700 text-base">
+            <p className="text-gray-700 text-base">
                Precio Por Persona: $   {precioPorPersona}
             </p>
         </div>
@@ -32,7 +32,7 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
 
             <p className="text-gray-700 text-base my-0">Cantidad de Personas:</p>
 
-            <button onClick={restar} class="bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button onClick={restar} className="bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">
                 -
             </button>
             
@@ -40,18 +40,18 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
                 { contador }
             </p>
 
-            <button  onClick={sumar} class="bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button  onClick={sumar} className="bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">
                 +
             </button>
         </div>
 
         <div className="px-6 pt-4 pb-2">
-            <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                 Agregar
             </button>
         </div>
         </div>
-       
+        
     )
 }
 
