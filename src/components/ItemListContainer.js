@@ -4,9 +4,9 @@ import ItemList from "./ItemList";
 const ItemListContainer = (  ) => {
 
     const [productos, setProductos] = useState([]);
-
+    
     useEffect(() => {
-      fetch('http://localhost:3000/productos.json')
+      fetch('./productos.json')
         .then (Resp => Resp.json())
         .then (datos => {
             setTimeout(() => {
