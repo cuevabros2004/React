@@ -1,7 +1,10 @@
 import '../App.css';
 import CartWidget from "./CartWidget"
 import logo from '../logo.png';
-import logoCarrito from '../logoCarrito.png';
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 
 const NavBar = () => {
     
@@ -15,18 +18,24 @@ const NavBar = () => {
             </button>
             <nav className="navbar navbar-expand-lg navbar-light">
 
-                    <ul><img src={logo} className="App-logo" alt="logo" /></ul>
-                    <ul>Quinta "La Mary"</ul>
-                    <ul><a className="dropdown-item" href="">La Mary</a></ul>
-                    <ul><a className="dropdown-item" href="">Servicios</a></ul>
-                    <ul><a className="dropdown-item" href="">Fotos</a></ul>
-                    <ul><a className="dropdown-item" href="">Ubicación</a></ul>
-                    <ul><a className="dropdown-item" href="">Contacto</a></ul>
+                    <ul><img src={logo} className="App-logo bg-cover mr-10" alt="logo" /></ul>
+                    
+                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">La Mary</a></ul>
+                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Servicios</a></ul>
+                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Fotos</a></ul>
+                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Ubicación</a></ul>
+                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Contacto</a></ul>
                     <ul><CartWidget/></ul>
 
               <form className="d-flex">
               </form>
               </nav>
+              <div className="font-sans md:Oswald text-gray-600 text-base text-center mb-2 inline-block">
+                  <p>Ruta 14 KM 257 - Concordia - Entre Ríos</p>
+                  <a className="inline-block mt-3" href="https://www.facebook.com/QuintaLaMary/"><FaFacebook/></a>
+                  <a className="inline-block ml-3" href="https://www.instagram.com/quintalamary2018/"><FaInstagram/></a>
+                  <a className="inline-block ml-3" href="mailto:cuevabros@yahoo.com"><MdEmail/></a>                  
+              </div>
           </div>
         
 

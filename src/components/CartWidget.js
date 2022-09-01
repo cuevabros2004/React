@@ -1,9 +1,9 @@
 import logo from '../logo.png';
-import logoCarrito from '../logoCarrito.png';
+import { FaShoppingCart } from "react-icons/fa";
 
 const CartWidget = () => {
-    return (
-      <a className="dropdown-item" href=""><img src={logoCarrito} className="App-logo" alt="logo" /></a>
+    return (      
+        <a  href="" className='font-sans md:Oswald text-gray-600'  ><FaShoppingCart className="ml-4 "/></a>
       )
   }
   export default CartWidget

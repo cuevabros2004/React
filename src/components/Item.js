@@ -21,7 +21,7 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
         <div className="max-w-sm rounded overflow-hidden shadow-lg inline-block">
         
         <div className="px-6 py-1 ml-2">
-            <div className="font-bold text-xl mb-2">{nombreProducto}</div>
+            <div className="font-bold text-xl mb-2 text-gray-600">{nombreProducto}</div>
             <img className= "" src={urlImagen}/>
             <p className="text-gray-700 text-base">
                Precio Por Persona: $   {precioPorPersona}
