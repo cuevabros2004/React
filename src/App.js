@@ -1,5 +1,6 @@
 import Saludo from './components/Saludo';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer';
 import './App.css';
 
@@ -19,7 +20,7 @@ function App(props) {
       <br></br>  
           <ItemListContainer/>
      </main>
-
+     <Footer/>
     </div>
     
   );

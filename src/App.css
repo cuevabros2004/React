@@ -34,6 +34,13 @@
   color: #61dafb;
 }
 
+.FooterImagenes{
+  background: linear-gradient(90deg, rgb(180, 215, 177) 0%, rgb(223, 252, 217) 35%, rgb(202, 242, 141) 100%);
+}
+
+.FooterTexto{
+  background: linear-gradient(90deg, rgb(85, 120, 74) 0%, rgb(182, 249, 162) 35%, rgb(85, 120, 74) 100%);
+}
 
 @keyframes App-logo-spin {
   from {
