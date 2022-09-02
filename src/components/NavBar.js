@@ -16,15 +16,16 @@ const NavBar = () => {
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
+            
             <nav className="navbar navbar-expand-lg navbar-light">
 
                     <ul><img src={logo} className="App-logo bg-cover mr-10" alt="logo" /></ul>
                     
-                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">La Mary</a></ul>
-                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Servicios</a></ul>
-                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Fotos</a></ul>
-                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Ubicación</a></ul>
-                    <ul><a className="dropdown-item font-sans md:Oswald text-gray-600" href="">Contacto</a></ul>
+                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">La Mary</a></ul>
+                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Servicios</a></ul>
+                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Fotos</a></ul>
+                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Ubicación</a></ul>
+                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Contacto</a></ul>
                     <ul><CartWidget/></ul>
 
               <form className="d-flex">

@@ -9,8 +9,7 @@
 }
 
  
-.App-header {   
-  
+.App-header {     
   background: linear-gradient(90deg, rgb(180, 215, 177) 0%, rgb(223, 252, 217) 35%, rgb(202, 242, 141) 100%);
   display: flex;
   flex-direction: column;
@@ -51,3 +50,15 @@ body{
 }
 
 
+.linksNavBar {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+}
+
+.linksNavBar:hover, a:focus {
+  background-size: 100% 2px;
+}
