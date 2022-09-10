@@ -30,6 +30,7 @@
   border-top: 0px;
 }
 
+ 
 .App-link {
   color: #61dafb;
 }
@@ -68,4 +69,8 @@ body{
 
 .linksNavBar:hover, a:focus {
   background-size: 100% 2px;
+}
+
+.divCentral{
+  height: min-content;
 }

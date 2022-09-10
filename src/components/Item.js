@@ -1,7 +1,8 @@
 import Carrito from "./Carrito"
 import {useState} from "react"
+import { Link } from 'react-router-dom';
 
-const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPersonas}) => {
+const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limiteCantPersonas}) => {
     
     const [contador, setContador] = useState(0)
 
@@ -22,7 +23,7 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
         
         <div className="px-6 py-1 ml-2">
             <div className="font-bold text-xl mb-2 text-gray-600">{nombreProducto}</div>
-            <img className= "" src={urlImagen}/>
+            <img className= "" src={urlImagen} alt = "imagen"/>
             <p className="text-gray-700 text-base">
                Precio Por Persona: $   {precioPorPersona}
             </p>
@@ -49,6 +50,13 @@ const Item = ({codigo, nombreProducto, precioPorPersona, urlImagen, limiteCantPe
             <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                 Agregar
             </button>
+
+            <Link to={'/Item/' + Slug}>
+                <button className="bg-red-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 ml-3 rounded focus:outline-none focus:shadow-outline" type="button">
+                    Ver Detalle
+                </button>
+            </Link>
+
         </div>
         </div>
         

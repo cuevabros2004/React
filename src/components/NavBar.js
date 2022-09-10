@@ -4,6 +4,7 @@ import logo from '../logo.png';
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -12,20 +13,26 @@ const NavBar = () => {
     
     <main>  
  
-          <div className="container-fluid">
+          <div className="container-fluid ">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             
-            <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light ">
 
-                    <ul><img src={logo} className="App-logo bg-cover mr-10" alt="logo" /></ul>
+                    <ul>
+                      <Link to="/">
+                        <img src={logo} className="App-logo bg-cover mr-10" alt="logo" />
+                      </Link>
+                    </ul>
                     
-                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">La Mary</a></ul>
-                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Servicios</a></ul>
-                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Fotos</a></ul>
-                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Ubicación</a></ul>
-                    <ul><a className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" href="">Contacto</a></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to='/LaMary'>La Mary</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/">Servicios</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/category/Eventos">Eventos</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/category/CasaQuinta">Casa Quinta</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Fotos">Fotos</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Ubicacion">Ubicación</Link></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Contacto">Contacto</Link></ul>
                     <ul><CartWidget/></ul>
 
               <form className="d-flex">
