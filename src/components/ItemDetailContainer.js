@@ -17,7 +17,7 @@ const ItemDetailContainer = () =>{
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (datos){
-                resolve(datos)                
+                resolve(datos)               
             }
             else{
                 reject("error")                

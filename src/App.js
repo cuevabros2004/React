@@ -8,6 +8,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './components/Cart';
+
 
 
 
@@ -31,6 +33,7 @@ function App(props) {
           <Route exact path="/Contacto" element={<Contacto/>}/>
           <Route exact path="/Item/:Slug" element={<ItemDetailContainer/>}/>
           <Route exact path="/Category/:categoryId" element={<ItemListContainer/>}/>
+          <Route exact path="/Cart" element={<Cart/>}/>
       </Routes>
 
 
