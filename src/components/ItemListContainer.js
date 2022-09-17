@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import productosJSON from "../productos.json"
+import Spinner from "./Spinner";
 
 const ItemListContainer = (  ) => {
 
     const [productos, setProductos] = useState([]);
     const {categoryId} = useParams()
+    const [loading, setLoading] = useState(true)
     
    /* useEffect(() => {
       fetch('./productos.json')
@@ -20,7 +22,7 @@ const ItemListContainer = (  ) => {
     }, [])*/
 
     useEffect(()=>{
-      getDatos(productosJSON, 2000)
+      getDatos(productosJSON, 3000)
       .then((datos)=>setProductos(datos))
       
  }, [])
@@ -29,7 +31,8 @@ const ItemListContainer = (  ) => {
   return new Promise((resolve, reject) => {
       setTimeout(() => {
           if (datos){
-              resolve(datos)                
+              resolve(datos)     
+              setLoading(false)           
           }
           else{
               reject("error")                
@@ -42,12 +45,21 @@ const ItemListContainer = (  ) => {
 
     return (
       <>
-        <div className="divCentral"> 
+        <div className="divCentral">     
+        {loading?
+          <div className="mb-5 mt-5">
+            <Spinner/>
+          </div>
+          :       
+          <div> 
             {categoryId===undefined?
             <ItemList productos = {productos} />
             :(<ItemList productos = {productos.filter(p=>p.categoria===categoryId) }/>)
             }
+          </div>
+          }
         </div>
+      
       </>
     )
   }

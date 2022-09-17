@@ -19,7 +19,7 @@ const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limite
         <div className="px-2 pt-2 pb-1 ">
 
             <Link to={'/Item/' + Slug}>
-                <button className="bg-red-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 ml-3 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button className="btn btn-outline" type="button">
                     Ver Detalle
                 </button>
             </Link>
