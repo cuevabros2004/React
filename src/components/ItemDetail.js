@@ -1,19 +1,19 @@
 import { Button } from "bootstrap"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom"
+import CartContext from './context/CartContext';
 
 const ItemDetail = ({prods}) =>{
 
     const [quantityToAdd, setQuantyToAdd] = useState(1)
     const [cantPersonasToAdd, setCantPersonasToAdd] = useState(1)
-    const [stock, setStock] = useState(1)
+    const {addItem} = useContext(CartContext)
+      
 
-    function onAdd(cantProducto, cantPersonas) {
-        setQuantyToAdd(cantProducto)
-        setCantPersonasToAdd(cantPersonas)
-        setStock(stock-cantProducto)
-    }
+    function onAdd(quantityToAdd, cantPersonasToAdd) {
+        addItem(prods, cantPersonasToAdd) 
+    }   
      
     return (
          
@@ -26,9 +26,15 @@ const ItemDetail = ({prods}) =>{
             <div className="px-6 py-1 ml-2 ">
                 <div className="font-bold text-xl mb-2 text-gray-600">{p.nombreProducto}</div>
                 <img className= "" src={p.imagen} alt="producto"/>
+                {p.stock>0 ?
                 <p className="text-gray-700 text-base">
                     Stock disponible: {p.stock}
                 </p>
+                :
+                <p className="text-red-700 text-base">
+                    Stock: SIN STOCK
+                </p>
+                }
                 <p className="text-gray-700 text-base">
                    Precio Por Persona: $   {p.precioPorPersona}
                 </p>
@@ -36,11 +42,11 @@ const ItemDetail = ({prods}) =>{
                     Descripcion: {p.descripcion}                    
                 </p>
             </div>
-            {stock > 0 ?
-            <ItemCount onAdd={onAdd}  limiteCantP={p.limiteCantPersonas} />
+            {p.stock > 0 ?
+                <ItemCount onAdd={onAdd} Initial="1" Stock={p.stock} limiteCantP={p.limiteCantPersonas} />
             :
             <div>
-                <Link to="/Cart"><button className="mb-3 ml-3 bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">Finalizar Compra</button></Link> 
+                <Link to="/Cart"><button className="mb-3 ml-3 bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline"  type="button">Finalizar Compra</button></Link> 
                 <Link to="/"><button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">Seguir Comprando</button></Link>
             </div>
             }

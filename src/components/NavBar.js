@@ -33,7 +33,7 @@ const NavBar = () => {
                     <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Fotos">Fotos</Link></ul>
                     <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Ubicacion">Ubicación</Link></ul>
                     <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Contacto">Contacto</Link></ul>
-                    <ul><CartWidget/></ul>
+                    <ul><Link className="linksNavBar font-sans md:Oswald text-gray-600 ml-8" to="/Cart"><CartWidget/></Link></ul>
 
               <form className="d-flex">
               </form>

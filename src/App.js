@@ -9,8 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart';
-
-
+import {CartProvider} from './components/context/CartContext';
 
 
 function App(props) {
@@ -20,11 +19,13 @@ function App(props) {
   return (
      <>
      <BrowserRouter>
+     
      <div className="App">
       <header className="App-header"> 
          <NavBar></NavBar>  
       </header>
 
+      <CartProvider>
       <Routes>
           <Route exact path="/" element={<ItemListContainer/>}/>
           <Route exact path="/LaMary" element={<LaMary/>}/>
@@ -35,7 +36,7 @@ function App(props) {
           <Route exact path="/Category/:categoryId" element={<ItemListContainer/>}/>
           <Route exact path="/Cart" element={<Cart/>}/>
       </Routes>
-
+      </CartProvider>
 
      <Footer/>
     </div>

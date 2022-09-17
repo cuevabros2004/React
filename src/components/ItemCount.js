@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 
-const ItemCount = ({onAdd, limiteCantP}) =>{
-    const [cantPersonas, setCantPersonas] = useState(1)
+const ItemCount = ({onAdd, Initial, limiteCantP}) =>{
+    const [cantPersonas, setCantPersonas] = useState(Number(Initial))
     const [cantidadProducto, setCantidadProducto] = useState(1)
 
     const restar = () =>{

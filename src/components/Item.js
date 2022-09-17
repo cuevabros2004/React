@@ -1,4 +1,4 @@
-import Carrito from "./Cart"
+
 import {useState} from "react"
 import { Link } from 'react-router-dom';
 
@@ -8,11 +8,11 @@ const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limite
                 
         <div className="max-w-sm rounded overflow-hidden shadow-lg inline-block">
         
-        <div className="px-6 py-1 ml-2">
+        <div className="px-6 py-1 ml-2 ">
             <div className="font-bold text-xl mb-2 text-gray-600">{nombreProducto}</div>
             <img className= "" src={urlImagen} alt = "imagen"/>
             <p className="text-gray-700 text-base">
-               Precio Por Persona: $   {precioPorPersona}
+              Precio Por Persona: $   {precioPorPersona}
             </p>
         </div>
        
