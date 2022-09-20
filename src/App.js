@@ -19,13 +19,12 @@ function App(props) {
   return (
      <>
      <BrowserRouter>
-     
+     <CartProvider>
      <div className="App">
-      <header className="App-header"> 
-         <NavBar></NavBar>  
+      <header className="App-header">             
+           <NavBar></NavBar>          
       </header>
 
-      <CartProvider>
       <Routes>
           <Route exact path="/" element={<ItemListContainer/>}/>
           <Route exact path="/LaMary" element={<LaMary/>}/>
@@ -36,11 +35,13 @@ function App(props) {
           <Route exact path="/Category/:categoryId" element={<ItemListContainer/>}/>
           <Route exact path="/Cart" element={<Cart/>}/>
       </Routes>
-      </CartProvider>
+   
 
      <Footer/>
     </div>
+    </CartProvider>
     </BrowserRouter>
+
     </>
   );
 }

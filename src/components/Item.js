@@ -2,7 +2,7 @@
 import {useState} from "react"
 import { Link } from 'react-router-dom';
 
-const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limiteCantPersonas}) => {
+const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limiteCantPersonas, stock}) => {
     
     return (
                 
@@ -13,6 +13,9 @@ const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limite
             <img className= "" src={urlImagen} alt = "imagen"/>
             <p className="text-gray-700 text-base">
               Precio Por Persona: $   {precioPorPersona}
+            </p>
+            <p className="text-gray-700 text-base">
+              Stock: {stock}
             </p>
         </div>
        

@@ -1,7 +1,7 @@
-[
-{"Slug": "salon", "codigo": "1", "nombreProducto": "SALÓN DE FIESTAS", "precioPorPersona": 200, "imagen":"/imagenes/Salon.jpg", "limiteCantPersonas": 100, "descripcion": "El Salón cuenta con 19 mesas y 8 sillas por mesa. Cocina y baños.", "categoria": "Eventos", "stock": 1},
-{"Slug": "pileta", "codigo": "2", "nombreProducto": "PILETA", "precioPorPersona": 300, "imagen":"/imagenes/Pileta.jpg", "limiteCantPersonas": 20,  "descripcion": "Pileta con capacidad para 20 personas.", "categoria": "Eventos", "stock": 1},
-{"Slug": "parrilla", "codigo": "3", "nombreProducto": "PARRILLA", "precioPorPersona": 400, "imagen": "/imagenes/Parrilla.jpg", "limiteCantPersonas": 100,  "descripcion": "Parrilla amplia con gran capacidad.", "categoria": "CasaQuinta", "stock": 1},
-{"Slug": "hospedaje", "codigo": "4", "nombreProducto": "HOSPEDAJE POR DÍA", "precioPorPersona": 500, "imagen": "/imagenes/Hospedaje.jpg", "limiteCantPersonas": 8,  "descripcion": "Casa de campo con capacidad para 8 personas.", "categoria": "CasaQuinta", "stock": 1},
-{"Slug": "cabalgata", "codigo": "5", "nombreProducto": "CABALGATA", "precioPorPersona": 250, "imagen": "/imagenes/Cabalgata.jfif", "limiteCantPersonas": 3,  "descripcion": "Contamos con caballos para que puedas disfrutar del campo.", "categoria": "CasaQuinta", "stock": 1}
+¿[
+{"Slug": "salon", "codigo": 1, "nombreProducto": "SALÓN DE FIESTAS", "precioPorPersona": 200, "imagen":"/imagenes/Salon.jpg", "limiteCantPersonas": 100, "descripcion": "El Salón cuenta con 19 mesas y 8 sillas por mesa. Cocina y baños.", "categoria": "Eventos", "stock": 1},
+{"Slug": "pileta", "codigo": 2, "nombreProducto": "PILETA", "precioPorPersona": 300, "imagen":"/imagenes/Pileta.jpg", "limiteCantPersonas": 20,  "descripcion": "Pileta con capacidad para 20 personas.", "categoria": "Eventos", "stock": 1},
+{"Slug": "parrilla", "codigo": 3, "nombreProducto": "PARRILLA", "precioPorPersona": 400, "imagen": "/imagenes/Parrilla.jpg", "limiteCantPersonas": 100,  "descripcion": "Parrilla amplia con gran capacidad.", "categoria": "CasaQuinta", "stock": 1},
+{"Slug": "hospedaje", "codigo": 4, "nombreProducto": "HOSPEDAJE POR DÍA", "precioPorPersona": 500, "imagen": "/imagenes/Hospedaje.jpg", "limiteCantPersonas": 8,  "descripcion": "Casa de campo con capacidad para 8 personas.", "categoria": "CasaQuinta", "stock": 1},
+{"Slug": "cabalgata", "codigo": 5, "nombreProducto": "CABALGATA", "precioPorPersona": 250, "imagen": "/imagenes/Cabalgata.jfif", "limiteCantPersonas": 3,  "descripcion": "Contamos con caballos para que puedas disfrutar del campo.", "categoria": "CasaQuinta", "stock": 1}
 ]

@@ -7,6 +7,24 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAgLravmzyD7tKtYnfdbUvw4_SOSp-cC88",
+  authDomain: "quintalamary-edb5f.firebaseapp.com",
+  projectId: "quintalamary-edb5f",
+  storageBucket: "quintalamary-edb5f.appspot.com",
+  messagingSenderId: "316999248873",
+  appId: "1:316999248873:web:5c52a64571beabc9f67978"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

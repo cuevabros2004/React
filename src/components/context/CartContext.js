@@ -7,34 +7,41 @@ export default CartContext
 
 const CartProvider = ({defaultValue=[], children})=>{
 
-    const [prodsCart, setProdsCart] = useState(defaultValue)
-        
-    const addItem = ( item, quantity ) =>{
+const [prodsCart, setProdsCart] = useState(defaultValue)
+const [cantProdsCart, setCantProdsCart] = useState(0)
+    
+    const addItem = ( item, quantityToAdd, cantPersonasToAdd ) =>{
         if (isInCart(item[0].codigo)){
-            item[0].stock =  item[0].stock - 1
-            item[0].cantProd = item[0].cantProd + 1
-            item[0].cantidad = quantity
+            item[0].stock =  item[0].stock - quantityToAdd
+            item[0].cantProd = item[0].cantProd + quantityToAdd
+            item[0].cantidad = cantPersonasToAdd
 
             setProdsCart( item )
+
         }else{            
-            item[0].stock =  item[0].stock - 1
-            item[0].cantProd = 1
-            item[0].cantidad = quantity
-            console.log(quantity)
+            item[0].stock =  item[0].stock - quantityToAdd
+            item[0].cantProd = quantityToAdd
+            item[0].cantidad = cantPersonasToAdd
+            
             setProdsCart( prevState => prevState.concat( item ) )
         }
-            
     }
     
-    const removeItem = (id) =>{
+    const removeItem = (id) =>{   
         setProdsCart(prodsCart.filter(p=>p.codigo!==id))
-        prodsCart[0].stock =  prodsCart[0].stock + 1
-    }
+        cantidadProdsInCart("remove", -prodsCart[0].cantProd)  
+       console.log(prodsCart)
+       prodsCart.find(p => p.codigo === id).stock = prodsCart.find(p => p.codigo === id).stock +  prodsCart.find(p => p.codigo === id).cantProd 
+       }
 
+       
+
+     
     const clearCart = () =>{
         setProdsCart([])
 
         prodsCart.forEach(p=>p.stock = p.stock + 1)
+        cantidadProdsInCart("removeAll", 0)
     }
 
     function isInCart (id) {
@@ -47,8 +54,18 @@ const CartProvider = ({defaultValue=[], children})=>{
         }
      }
 
+     function cantidadProdsInCart(operacion, cantProds){
+ 
+        const totalProds = (operacion==="removeAll")?
+                            0:
+                            prodsCart.reduce((acumulador, prodsCart) => acumulador + Math.abs(cantProds), cantProds)
+        setCantProdsCart(totalProds)
+     }
+
+ 
+
     return (
-    <CartContext.Provider value={{prodsCart, addItem, clearCart, removeItem, totalizar}}>
+    <CartContext.Provider value={{prodsCart, addItem, clearCart, removeItem, totalizar, cantProdsCart, cantidadProdsInCart}}>
         {children}
     </CartContext.Provider>
     )

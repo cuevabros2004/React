@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import productosJSON from "../productos.json"
 import Spinner from "./Spinner";
+import CartContext from "./context/CartContext";
+import { useContext } from "react";
 
 const ItemListContainer = (  ) => {
 
@@ -10,23 +12,11 @@ const ItemListContainer = (  ) => {
     const {categoryId} = useParams()
     const [loading, setLoading] = useState(true)
     
-   /* useEffect(() => {
-      fetch('./productos.json')
-        .then (Resp => Resp.json())
-        .then (datos => {
-            setTimeout(() => {
-            setProductos(datos)            
-          }, 2000);
-        })
-       
-    }, [])*/
-
-    useEffect(()=>{
-      getDatos(productosJSON, 3000)
-      .then((datos)=>setProductos(datos))
-      
+     useEffect(()=>{
+        getDatos(productosJSON, 3000)
+       .then((datos)=>setProductos(datos))     
  }, [])
-  
+ 
  const getDatos = (datos, tiempo)=>{
   return new Promise((resolve, reject) => {
       setTimeout(() => {

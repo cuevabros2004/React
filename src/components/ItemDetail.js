@@ -9,10 +9,11 @@ const ItemDetail = ({prods}) =>{
     const [quantityToAdd, setQuantyToAdd] = useState(1)
     const [cantPersonasToAdd, setCantPersonasToAdd] = useState(1)
     const {addItem} = useContext(CartContext)
-      
+    const {cantidadProdsInCart} = useContext(CartContext)
 
     function onAdd(quantityToAdd, cantPersonasToAdd) {
-        addItem(prods, cantPersonasToAdd) 
+        addItem(prods, quantityToAdd, cantPersonasToAdd) 
+        cantidadProdsInCart("add", quantityToAdd)
     }   
      
     return (
