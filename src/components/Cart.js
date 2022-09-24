@@ -30,22 +30,21 @@ const Cart = () => {
                         <h4>Cantidad de Personas: {p.cantidad} </h4>
                         <h4>Importe Total: $ {p.cantidad * p.precioPorPersona} </h4>
                     </div>       
-                <button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" onClick={(() => removeItem(p.codigo))} type="button">QUITAR</button>
+                <button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" onClick={(() => removeItem(prodsCart,p.codigo))} type="button">QUITAR</button>
                 </div>              
             </div>   
         </div>     
         ) //Fin map
         } 
         </div> 
-                <div className="bg-green-50 font-light text-xl pb-2 decoration-8">
+            <div className="bg-green-50 font-light text-xl pb-2 decoration-8">
             <p className="">Monto Total Compra: $ {total} </p>
             <button className="mt-3 mb-3 ml-1 bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline " onClick={(()=>clearCart())} >Vaciar Carrito</button>                 
         </div>
         </div>:
         <div className= "border-3 border-solid border-slate text-2xl bg-slate-100 h-40 pt-4 decoration-solid">
             <p className="">Carrito de Compras Vacio</p>
-            <Link to="/"><button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">Seguir Comprando</button></Link>               
-             
+            <Link to="/"><button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">Seguir Comprando</button></Link>                            
         </div>}                  
 
     </>

@@ -5,19 +5,30 @@ import productosJSON from "../productos.json"
 import Spinner from "./Spinner";
 import CartContext from "./context/CartContext";
 import { useContext } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { query } from "firebase/firestore";
+import { where } from "firebase/firestore";
 
 const ItemListContainer = (  ) => {
-
     const [productos, setProductos] = useState([]);
     const {categoryId} = useParams()
     const [loading, setLoading] = useState(true)
-    
+
+   
      useEffect(()=>{
-        getDatos(productosJSON, 3000)
-       .then((datos)=>setProductos(datos))     
- }, [])
+       // getDatos(productosJSON, 3000)
+       //.then((datos)=>setProductos(datos))     
+       const db = getFirestore();
+        
+       const itemsCollection = categoryId===undefined? collection(db, "items") :  query(collection(db, "items"), where("categoria", "==", categoryId));
+            
+       getDocs(itemsCollection).then((snapshot) =>{
+          setProductos(snapshot.docs.map((doc) => ({id: doc.codigo, ...doc.data()})));
+          setLoading(false)   
+       });
+      }, [categoryId]);
  
- const getDatos = (datos, tiempo)=>{
+ /*const getDatos = (datos, tiempo)=>{
   return new Promise((resolve, reject) => {
       setTimeout(() => {
           if (datos){
@@ -29,9 +40,10 @@ const ItemListContainer = (  ) => {
           }
           
       }, tiempo);
-  })
+  }
+  )
   
- }
+ }*/
 
     return (
       <>
@@ -41,11 +53,8 @@ const ItemListContainer = (  ) => {
             <Spinner/>
           </div>
           :       
-          <div> 
-            {categoryId===undefined?
+          <div>             
             <ItemList productos = {productos} />
-            :(<ItemList productos = {productos.filter(p=>p.categoria===categoryId) }/>)
-            }
           </div>
           }
         </div>

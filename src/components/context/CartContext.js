@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import { doc, getFirestore, updateDoc } from "firebase/firestore";
 
 const CartContext = React.createContext([]);
 
@@ -9,6 +10,7 @@ const CartProvider = ({defaultValue=[], children})=>{
 
 const [prodsCart, setProdsCart] = useState(defaultValue)
 const [cantProdsCart, setCantProdsCart] = useState(0)
+const db = getFirestore();  
     
     const addItem = ( item, quantityToAdd, cantPersonasToAdd ) =>{
         if (isInCart(item[0].codigo)){
@@ -18,30 +20,41 @@ const [cantProdsCart, setCantProdsCart] = useState(0)
 
             setProdsCart( item )
 
-        }else{            
+        }else{      
+    
             item[0].stock =  item[0].stock - quantityToAdd
             item[0].cantProd = quantityToAdd
             item[0].cantidad = cantPersonasToAdd
             
             setProdsCart( prevState => prevState.concat( item ) )
         }
+        
+        //const stockProd = doc(db, "items", (item[0].Slug))
+        //updateDoc(stockProd, {stock: item[0].stock })
+        actualizarStockBD(item[0].codigo, item, "agregar")
     }
     
-    const removeItem = (id) =>{   
+    const removeItem = (prodsCart,  id) =>{   
         setProdsCart(prodsCart.filter(p=>p.codigo!==id))
         cantidadProdsInCart("remove", -prodsCart[0].cantProd)  
-       console.log(prodsCart)
-       prodsCart.find(p => p.codigo === id).stock = prodsCart.find(p => p.codigo === id).stock +  prodsCart.find(p => p.codigo === id).cantProd 
+        prodsCart.find(p => p.codigo === id).stock = prodsCart.find(p => p.codigo === id).stock +  prodsCart.find(p => p.codigo === id).cantProd 
+
+        actualizarStockBD(id, prodsCart, "eliminar")
+ 
        }
 
        
 
      
     const clearCart = () =>{
-        setProdsCart([])
 
         prodsCart.forEach(p=>p.stock = p.stock + 1)
+        
         cantidadProdsInCart("removeAll", 0)
+      
+        prodsCart.forEach(p=> actualizarStockBD(p.codigo, prodsCart, "eliminar"))
+        
+        setProdsCart([])
     }
 
     function isInCart (id) {
@@ -62,10 +75,20 @@ const [cantProdsCart, setCantProdsCart] = useState(0)
         setCantProdsCart(totalProds)
      }
 
- 
+     const actualizarStockBD = (id, item, accion) =>{
+
+        if (accion==="eliminar"){
+            const stockProd = doc(db, "items", (prodsCart.find(p => p.codigo === id).Slug))
+            updateDoc(stockProd, {stock: prodsCart.find(p => p.codigo === id).stock})
+        }else{
+            const stockProd = doc(db, "items", (item[0].Slug))
+            updateDoc(stockProd, {stock: item[0].stock })
+        }
+     }
+
 
     return (
-    <CartContext.Provider value={{prodsCart, addItem, clearCart, removeItem, totalizar, cantProdsCart, cantidadProdsInCart}}>
+    <CartContext.Provider value={{prodsCart, addItem, clearCart, removeItem, totalizar, cantProdsCart, cantidadProdsInCart, isInCart}}>
         {children}
     </CartContext.Provider>
     )
