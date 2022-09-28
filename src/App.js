@@ -4,6 +4,7 @@ import LaMary from './components/LaMary';
 import Contacto from './components/Contacto';
 import Fotos from './components/Fotos';
 import Ubicacion from './components/Ubicacion';
+import Orden from './components/Orden';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import './App.css';
@@ -34,6 +35,7 @@ function App(props) {
           <Route exact path="/Item/:Slug" element={<ItemDetailContainer/>}/>
           <Route exact path="/Category/:categoryId" element={<ItemListContainer/>}/>
           <Route exact path="/Cart" element={<Cart/>}/>
+          <Route exact path="/Orden" element={<Orden/>}/>
       </Routes>
    
 

@@ -14,9 +14,6 @@ const Item = ({codigo, Slug, nombreProducto, precioPorPersona, urlImagen, limite
             <p className="text-gray-700 text-base">
               Precio Por Persona: $   {precioPorPersona}
             </p>
-            <p className="text-gray-700 text-base">
-              Stock: {stock}
-            </p>
         </div>
        
         <div className="px-2 pt-2 pb-1 ">
