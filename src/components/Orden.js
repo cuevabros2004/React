@@ -55,6 +55,10 @@ const Orden = () =>{
                 addDoc(orderCollection, order).then(({ codigo }) => console.log(codigo));
            
                 clearCart();
+                ev.target.nombre.value = ""
+                ev.target.telefono.value = ""
+                ev.target.email.value = ""
+
            
                 Swal.fire(
                  'Felicitaciones!',
