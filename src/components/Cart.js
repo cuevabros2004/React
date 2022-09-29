@@ -14,6 +14,7 @@ const Cart = () => {
     const total = totalizar()
         
       return (
+       
         <>
         <div  className="bg-green-200">Carrito de Compras</div>
         {Object.entries(prodsCart).length>0?
@@ -49,9 +50,10 @@ const Cart = () => {
             <p className="">Carrito de Compras Vacio</p>
             <Link to="/"><button className="mt-3 mb-3 ml-3 bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline" type="button">Seguir Comprando</button></Link>                            
         </div>
-        }                  
+        }       
+   </>      
+    
 
-    </>
     )
 }
 
