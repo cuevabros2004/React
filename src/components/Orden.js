@@ -122,17 +122,31 @@ const Orden = () =>{
               {prodsCart.map(p=>
               <tr key={p.codigo} className="divide-y divide-solid ">
                 <td className="pl-2 pr-4">{p.nombreProducto}</td>
-                <td className="pl-2 pr-4">{p.cantProd}</td>
-                <td className="pl-2 pr-4">$ {p.precioPorPersona * p.cantidad}</td>
+                <td className="pl-17">{p.cantProd}</td>
+                <td className="pl-17">$ {p.precioPorPersona * p.cantidad}</td>
               </tr>
              )}
              
             </tbody>
           </table>
-          <div className="flex ml-3 mt-2 drop-shadow-xl bg-gray-100">
-            <h1 className="pr-10"> Total de la Compra:</h1> 
-            <p className="ml-20">$ {totalCompra}</p>
-          </div>
+        </div>
+        <div className="mt-2 mb-1 border-1 drop-shadow-xl bg-green-200 ">
+           
+            <table className="table-auto ">
+            <thead>
+              <tr>
+                <th className="pr-4 pl-4"></th>
+                <th className="pr-4"></th>                
+              </tr>
+            </thead>
+            <tbody>              
+              <tr className="divide-y divide-solid ">
+                <td className="pl-2 pr-4">Monto Total Compra:</td>
+                <td className="pl-0">$ {totalCompra}</td>
+              </tr>
+                           
+            </tbody>
+          </table>
         </div>
     </div>
     </div>
