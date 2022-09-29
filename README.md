@@ -21,4 +21,4 @@ Luego de finalizar la compra deberá ingresar sus datos personales (nombre y ape
 
 ### `Aplicación WEB`
 
-Para poder acceder a la aplicación deberá ingresar en el siguiente Link: https://quintalamaryconcordia.netlify.app/.
+Para poder acceder a la aplicación deberá ingresar en el siguiente Link: [Quinta "La Mary"](https://quintalamaryconcordia.netlify.app/)
